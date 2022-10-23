@@ -11,17 +11,25 @@ public class Node {
 	private List<Node> prereqTo;
 	private static Map<Integer,Node> instances = new HashMap<>();
 	
+	/*
+	 * Use getInstance node to get instance of Node n , not this constructor
+	 */
 	private Node(int classNum) {
 		this.classNum = classNum;
 		prereqTo= new ArrayList<>();
 	}
 	
-	public void incInDegree() {
+	private void incInDegree() {
 		inDegree++;
 	}
 	
 	public void addPrereq(Node n) {
 		prereqTo.add(n);
+		n.incInDegree();
+	}
+	
+	public int getClassNum() {
+		return classNum;
 	}
 	
 	public static Node getInstance(int num) {
