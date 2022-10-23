@@ -23,4 +23,12 @@ public class Graph {
 		
 		
 	}
+	/*
+	 * Go through graph and find a course with inDegree 0, and return the first node that meets 
+	 * this requirement
+	 */
+	public Node getAvailableCourse() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
